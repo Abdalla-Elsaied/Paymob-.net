@@ -1,7 +1,3 @@
-Great! Here's a well-structured and professional `README.md` file for your GitHub repository, tailored for your Paymob .NET integration project:
-
----
-
 # Paymob Integration with ASP.NET Core Web API
 
 A simple, open-source starter template for integrating **Paymob Unified Checkout** with ASP.NET Core Web API.
