@@ -1,113 +1,34 @@
-💳 Paymob Integration with .NET Web API
-Seamless payment integration with Paymob using .NET 7+ and the Unified Checkout API.
+💳 Paymob Payment Integration with Web API
+A flexible and secure integration with Paymob's Unified Checkout using Web API.
 
 🚀 Features
-Initiate payment through Paymob Unified Checkout
+Generate direct payment links through Paymob
 
-Secure callback handling with HMAC validation
+Automatically confirm bookings after successful payment
 
-Dynamic integration ID handling (Card, Wallet, Kiosk)
+Support for multiple payment methods: card, wallet, kiosk
 
-Booking confirmation after successful payment
+Secure Paymob callbacks using HMAC verification
 
-📦 Tech Stack
-.NET 7 / ASP.NET Core Web API
+Dynamic Integration ID handling based on payment method
 
-Identity (UserManager)
-
-HttpClient
+🛠️ Technologies Used
+ASP.NET Core Web API
 
 Paymob Unified Intention API
 
-HMAC SHA512 validation
+HMAC for data validation
 
-⚙️ Configuration
-Update your appsettings.json with your Paymob credentials:
+User management via UserManager
 
-json
-Copy
-Edit
-"PaymobSettingkey": {
-  "APIKey": "your_api_key",
-  "Publishablekey": "your_public_key",
-  "Secretkey": "your_secret_key",
-  "IntegrationIdCard": "card_integration_id",
-  "IntegrationIdKiosk": "kiosk_integration_id",
-  "IntegrationIdWallet": "wallet_integration_id",
-  "Hmac": "your_hmac_secret",
-  "NotificationUrl": "https://yourdomain.com/api/payment/callback",
-  "RedirectionUrl": "https://yourdomain.com/confirmation"
-}
-📤 Payment Flow Overview
+HttpClient for API communication with Paymob
+
+🔄 Payment Flow
 1. Initiate Payment
-POST /api/payment/initiate
+The user sends a request to start a new payment, specifying the booking and the payment method.
 
-Request Body:
+2. Generate Payment Link
+Your system sends the data to Paymob, receives a payment link, and returns it to the user.
 
-json
-Copy
-Edit
-{
-  "bookingId": 123,
-  "paymentMethod": "card" // or "wallet", "kiosk"
-}
-Response:
-
-json
-Copy
-Edit
-{
-  "success": true,
-  "paymentUrl": "https://accept.paymob.com/unifiedcheckout/?publicKey=...&clientSecret=...",
-  "transactionId": "booking-123-638482..."
-}
-2. Callback Handling
-Paymob will call:
-
-POST /api/payment/callback?hmac=...
-
-Parses and validates the callback data
-
-Extracts bookingId from special_reference
-
-Confirms booking payment if success = true
-
-Validates HMAC signature for security
-
-🔒 HMAC Validation
-To validate Paymob callback authenticity:
-
-Extract obj from the callback JSON.
-
-Flatten and concatenate required fields (as per Paymob docs).
-
-Hash with HMAC-SHA512 using your Hmac secret.
-
-Compare with the received hmac in query string.
-
-If the HMACs match, the callback is valid ✅
-
-📌 Important Tips
-Always validate ModelState before initiating payment.
-
-Use special_reference to uniquely track bookings.
-
-Log all Paymob responses (especially in failure cases).
-
-Don't skip HMAC validation — it's critical for security.
-
-🧠 Example Use Case
-Used in a travel booking app:
-
-User books a trip → system sends a Paymob payment link.
-
-On successful payment, Paymob calls the callback endpoint.
-
-The system verifies and marks the booking as confirmed.
-
-🤝 Contributions
-Feel free to fork, improve, or suggest better handling for payment statuses, error codes, or retry logic.
-
-📬 Contact
-For questions, feel free to reach out on LinkedIn or open an issue.
-
+3. Complete Payment
+Once the user completes the payment, Paymob sends a callback to your system to confirm the transaction.
