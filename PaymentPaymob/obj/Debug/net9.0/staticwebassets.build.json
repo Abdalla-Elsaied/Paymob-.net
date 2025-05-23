@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "RRPgYr0ofsIL4xSOsABp71ujsFkr+6dmZ71HVLNQjD4=",
+  "Source": "PaymentPaymob",
+  "BasePath": "_content/PaymentPaymob",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -1,0 +1,62 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\courses\\VS projects\\PaymentPaymob\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8ECF8175-B7A7-4E1F-BCB8-257C1E9C2286}|PaymentPaymob.csproj|e:\\courses\\vs projects\\paymentpaymob\\implementation\\paymentservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8ECF8175-B7A7-4E1F-BCB8-257C1E9C2286}|PaymentPaymob.csproj|solutionrelative:implementation\\paymentservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8ECF8175-B7A7-4E1F-BCB8-257C1E9C2286}|PaymentPaymob.csproj|e:\\courses\\vs projects\\paymentpaymob\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8ECF8175-B7A7-4E1F-BCB8-257C1E9C2286}|PaymentPaymob.csproj|solutionrelative:controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PaymentServices.cs",
+              "DocumentMoniker": "E:\\courses\\VS projects\\PaymentPaymob\\Implementation\\PaymentServices.cs",
+              "RelativeDocumentMoniker": "Implementation\\PaymentServices.cs",
+              "ToolTip": "E:\\courses\\VS projects\\PaymentPaymob\\Implementation\\PaymentServices.cs",
+              "RelativeToolTip": "Implementation\\PaymentServices.cs",
+              "ViewState": "AgIAAC8BAAAAAAAAAAAuwEsBAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T07:12:38.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "E:\\courses\\VS projects\\PaymentPaymob\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PaymentController.cs",
+              "ToolTip": "E:\\courses\\VS projects\\PaymentPaymob\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "Controllers\\PaymentController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAIA0wCUAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T07:07:38.32Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
