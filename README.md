@@ -1,34 +1,80 @@
-💳 Paymob Payment Integration with Web API
-A flexible and secure integration with Paymob's Unified Checkout using Web API.
+Paymob Integration with ASP.NET Core Web API
+A simple, open-source starter template for integrating Paymob Unified Checkout with ASP.NET Core Web API.
 
-🚀 Features
-Generate direct payment links through Paymob
+📌 Purpose
+This repository is intended to help developers integrate Paymob’s payment gateway more easily into their .NET backends. It demonstrates the full flow — from creating a payment link to verifying payment via callback, with clean and modular code.
 
-Automatically confirm bookings after successful payment
+⚠️ This is an initial version and might be missing some error handling or edge case support. The code will be improved over time. Contributions and suggestions are welcome.
 
-Support for multiple payment methods: card, wallet, kiosk
+🔧 Features
+✅ Integration with Paymob’s Unified Checkout API
 
-Secure Paymob callbacks using HMAC verification
+🔐 HMAC verification to secure callback data
 
-Dynamic Integration ID handling based on payment method
+🔁 Automatic update of booking status after payment confirmation
 
-🛠️ Technologies Used
-ASP.NET Core Web API
+🔄 Support for different payment methods (cards, wallets, cash)
 
-Paymob Unified Intention API
+🧩 Flexible structure to adapt to your application logic
 
-HMAC for data validation
+📁 Project Structure
+Copy
+Edit
+/Controllers
+  └── PaymentController.cs
+/DTOs
+  └── PaymobRequestDto.cs
+  └── CallbackDto.cs
+/Services
+  └── PaymobService.cs
+  └── HmacService.cs
+Helpers
+  └── ApiCaller.cs
+🚀 How It Works
+Create Payment Intent
+The backend generates a payment link using your Paymob credentials.
 
-User management via UserManager
+Customer Pays
+The user is redirected to the Paymob page and completes the payment.
 
-HttpClient for API communication with Paymob
+Paymob Callback
+Paymob calls your /api/payment/callback endpoint after payment with transaction details.
 
-🔄 Payment Flow
-1. Initiate Payment
-The user sends a request to start a new payment, specifying the booking and the payment method.
+Verify & Update
+The system verifies the HMAC, checks payment success, and updates booking/payment status.
 
-2. Generate Payment Link
-Your system sends the data to Paymob, receives a payment link, and returns it to the user.
+🛠️ Setup Instructions
+Clone the repository:
 
-3. Complete Payment
-Once the user completes the payment, Paymob sends a callback to your system to confirm the transaction.
+bash
+Copy
+Edit
+git clone https://github.com/Abdalla-Elsaied/Paymob-.net
+cd Paymob-.net
+Configure the following settings in appsettings.json:
+
+json
+Copy
+Edit
+{
+  "Paymob": {
+    "ApiKey": "YOUR_API_KEY",
+    "IframeId": "YOUR_IFRAME_ID",
+    "IntegrationId": "YOUR_INTEGRATION_ID",
+    "HmacSecret": "YOUR_HMAC_SECRET"
+  }
+}
+Run the application:
+
+bash
+Copy
+Edit
+dotnet run
+🧪 Testing Callback
+Use tools like ngrok to expose your local server to receive Paymob's callback.
+
+💬 Feedback & Contributions
+If you find a bug or want to suggest improvements, feel free to open an issue or submit a pull request. Every bit of feedback helps improve the integration!
+
+📄 License
+This project is open-source and available under the MIT License.
